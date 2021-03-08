@@ -33,6 +33,6 @@ public abstract class BonusCrapsBet extends PropositionOddsBet{
 	
 	@Override
 	public double getOdds() {
-		return (double) 34/1;
+		return 0;
 	}
 }

@@ -2,12 +2,12 @@ package com.williamspreitzer.craps.bets;
 
 import com.williamspreitzer.craps.utils.CrapsUtils;
 
-public class AnySevenBet extends PropositionOddsBet {
+public class DontPassBarTweleveOddsBet extends NonPropositionOddsBet{
 
-	AnySevenBet(int betAmount) {
-		super(CrapsUtils.ZERO, betAmount);
+	DontPassBarTweleveOddsBet(int betAmount) {
+		super(CrapsUtils.getPoint(), betAmount);
 	}
-
+	
 	@Override
 	public double getOdds() {
 		return 0;

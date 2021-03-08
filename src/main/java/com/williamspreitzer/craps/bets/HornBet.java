@@ -15,45 +15,12 @@ public class HornBet extends PropositionOddsBet {
 	
 	@Override
 	public double getOdds() {
-		double odds = 0;
-		if(type.equals(BetType.CRAPS_TWO_OR_TWELEVE_BET)) {
-			odds = (double) 30/1;
-		} else {
-			odds = (double) 15/1;
-		}
-		return odds;
+		return 0;
 	}
 
 	@Override
 	public int processBet(Bet bet, byte count) {
-		double winnings = 0;
-		this.isWinningBet = true;
-		if(this.equals(bet)) {
-			switch(count) {
-			case 2: case 12:
-				type = BetType.CRAPS_TWO_OR_TWELEVE_BET;
-				if(this.highBetNumber == count) {
-					winnings = OddsBet.calculator.calculate(getHighBet(this.betAmount), getOdds());
-				} else {
-					winnings = OddsBet.calculator.calculate(getSingleUnit(this.betAmount, (byte) 4), getOdds());
-				}
-				break;
-			case 3: case 11:
-				type = BetType.THREE_OR_ELEVEN_BET;
-				if(this.highBetNumber == count) {
-					winnings = OddsBet.calculator.calculate(getHighBet(this.betAmount), getOdds());
-				}else {
-					winnings = OddsBet.calculator.calculate(getSingleUnit(this.betAmount, (byte) 4), getOdds());
-				}
-				break;
-			default:
-				this.isWinningBet = false;
-				winnings = this.betAmount * -1;
-				break;
-			}
-		}
-		winnings = winnings - (getSingleUnit(this.betAmount, (byte) 4) * 3);
-		return (int) winnings;
+		return 0;
 	}
 	
 	private int getHighBet(int betAmount) {
