@@ -2,10 +2,12 @@ package com.williamspreitzer.craps.bets;
 
 public class PassLineBet extends NonPropositionBet {
 
-	@Override
-	public int processBet(Bet bet, byte count) {
-		// TODO Auto-generated method stub
-		return 0;
+	public PassLineBet(int betAmount) {
+		super(betAmount);
 	}
 
+	@Override
+	public int processBet(Bet bet, byte count) {
+		return 0;
+	}
 }

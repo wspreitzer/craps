@@ -1,11 +1,14 @@
 package com.williamspreitzer.craps.bets;
 
-public class FourTenPlaceBet extends NonPropositionOddsBet {
+public class DontComeBarTweleveOddsBet extends NonPropositionOddsBet {
 
-	public FourTenPlaceBet(byte number, int betAmount) {
+	protected byte number;
+	
+	DontComeBarTweleveOddsBet(byte number, int betAmount) {
 		super(number, betAmount);
+		this.number = number;
 	}
-
+	
 	@Override
 	public double getOdds() {
 		return 0;

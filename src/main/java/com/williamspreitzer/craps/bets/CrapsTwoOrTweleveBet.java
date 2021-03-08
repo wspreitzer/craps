@@ -1,8 +1,8 @@
 package com.williamspreitzer.craps.bets;
 
-public class FourTenPlaceBet extends NonPropositionOddsBet {
+public class CrapsTwoOrTweleveBet extends PropositionOddsBet {
 
-	public FourTenPlaceBet(byte number, int betAmount) {
+	public CrapsTwoOrTweleveBet(byte number, int betAmount) {
 		super(number, betAmount);
 	}
 

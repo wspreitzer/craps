@@ -9,10 +9,12 @@ public abstract class NonPropositionBet implements Bet{
 	boolean rackProperty;
 	int minBet;
 	int maxBet;
+	boolean isOn;
 	
-	public NonPropositionBet() {
+	public NonPropositionBet(int betAmount) {
 		this.minBet = Integer.parseInt(CrapsUtils.props.getProperty("bet.min"));
 		this.maxBet = Integer.parseInt(CrapsUtils.props.getProperty("bet.max"));
+		this.betAmount = betAmount;
 	}
 	
 	@Override
@@ -28,5 +30,13 @@ public abstract class NonPropositionBet implements Bet{
 	@Override
 	public int getBetAmount() {
 		return this.betAmount;
+	}
+
+	public boolean isOn() {
+		return this.isOn();
+	}
+	
+	protected void setOn(boolean isOn) {
+		this.isOn = isOn;
 	}
 }

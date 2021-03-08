@@ -1,11 +1,11 @@
 package com.williamspreitzer.craps.bets;
 
-public class MidwayBet extends PropositionBet{
+public class FourRollsNoSevenBet extends PropositionBet {
 
-	public MidwayBet(int betAmount) {
+	public FourRollsNoSevenBet(int betAmount) {
 		super(betAmount);
 	}
-	
+
 	@Override
 	public int processBet(Bet bet, byte count) {
 		return 0;
