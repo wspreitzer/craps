@@ -2,5 +2,32 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.williamspreitzer.craps</groupId>
   <artifactId>Craps</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-api</artifactId>
+  		<version>1.7.30</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.williamspreitzer</groupId>
+  		<artifactId>autoupdate</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.junit.platform</groupId>
+  		<artifactId>junit-platform-suite-api</artifactId>
+  		<version>1.4.2</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.junit.platform</groupId>
+  		<artifactId>junit-platform-runner</artifactId>
+  		<version>1.4.2</version>
+  		<scope>test</scope>
+  	</dependency>
+  	
+  </dependencies>
+  
 </project>
