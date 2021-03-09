@@ -4,7 +4,7 @@ public class BetFactory {
 
 	private static Bet bet = null;
 	
-	public static PropositionBet createPropsBets(BetType type, int betAmount) {
+	public static PropositionBet createPropsBet(BetType type, int betAmount) {
 		switch(type) {
 		case ALL_BET:
 			bet = new AllBet(betAmount);
@@ -26,6 +26,9 @@ public class BetFactory {
 			break;
 		case DOUBLES_BET:
 			bet = new DoublesBet(betAmount);
+			break;
+		case FIELD_BET:
+			bet = new FieldBet(betAmount);
 			break;
 		case FIRE_BET:
 			bet = new FireBet(betAmount);
