@@ -37,5 +37,9 @@ public abstract class Roll {
 		return rollCount++;
 	}
 	
+	public boolean isHardway() {
+		return die == die2 ? true : false;
+	}
+	
 	public abstract boolean isPointEstablished();
 }
