@@ -18,12 +18,16 @@ public class HornBet extends PropositionOddsBet {
 		return 0;
 	}
 
+	public byte getHighBetNumber() {
+		return this.highBetNumber;
+	}
+	
 	@Override
 	public int processBet(Bet bet, byte count) {
 		return 0;
 	}
 	
-	private int getHighBet(int betAmount) {
+	protected int getHighBet(int betAmount) {
 		return (betAmount % 4) + getSingleUnit(betAmount, (byte) 4);
 	}
 }

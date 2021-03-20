@@ -4,7 +4,7 @@ public class BetFactory {
 
 	private static Bet bet = null;
 	
-	public static PropositionBet createPropsBet(BetType type, int betAmount) {
+	public static Bet createPropsBet(BetType type, int betAmount) {
 		switch(type) {
 		case ALL_BET:
 			bet = new AllBet(betAmount);
@@ -63,10 +63,10 @@ public class BetFactory {
 		default:
 			break;
 		}
-		return (PropositionBet) bet;
+		return bet;
 	}
 	
-	public static PropositionBet createPropsBet(BetType type, byte number, int betAmount) {
+	public static Bet createPropsBet(BetType type, byte number, int betAmount) {
 		switch(type) {
 		case COME_ODDS_BET:
 			bet = new ComeOddsBet(number, betAmount);
@@ -108,6 +108,6 @@ public class BetFactory {
 		default:
 			break;
 		}
-		return (PropositionBet) bet;
+		return bet;
 	}
 }
