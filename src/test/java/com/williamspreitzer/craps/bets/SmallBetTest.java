@@ -81,6 +81,7 @@ public class SmallBetTest {
 		assertEquals(0, bet.processBet(smallBet, (byte) 2));
 		assertEquals(1, rolls.size());
 	}
+	
 	@Test
 	public void smallBetSecondRollAdded() {
 		when(bet.getRollTracker()).thenReturn(new ArrayList<Byte>() {
