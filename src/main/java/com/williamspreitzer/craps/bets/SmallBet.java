@@ -1,7 +1,7 @@
 package com.williamspreitzer.craps.bets;
 
 public class SmallBet extends BonusCrapsBet {
-
+	
 	SmallBet(int betAmount) {
 		super(betAmount);
 	}

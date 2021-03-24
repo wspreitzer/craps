@@ -1,6 +1,8 @@
 package com.williamspreitzer.craps.bets;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.williamspreitzer.craps.utils.CrapsUtils;
@@ -10,6 +12,7 @@ public abstract class BonusCrapsBet extends PropositionOddsBet{
 	Set<Byte> smallNumbers;
 	Set<Byte> tallNumbers;
 	Set<Byte> allNumbers;
+	List<Byte> rollTracker = null;
 	
 	BonusCrapsBet(int betAmount) {
 		super(CrapsUtils.ZERO, betAmount);
@@ -28,11 +31,16 @@ public abstract class BonusCrapsBet extends PropositionOddsBet{
 		this.tallNumbers.add((byte) 11);
 		this.tallNumbers.add((byte) 12);
 		this.allNumbers = new HashSet<Byte>(smallNumbers);
-		allNumbers.addAll(tallNumbers);
+		this.allNumbers.addAll(tallNumbers);
+		this.rollTracker = new ArrayList<Byte>();
 	}
 	
 	@Override
 	public double getOdds() {
 		return 0;
+	}
+	
+	public List<Byte> getRollTracker() {
+		return this.rollTracker;
 	}
 }
