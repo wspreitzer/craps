@@ -28,8 +28,6 @@ public class PassLineOddsBetTest {
 
 	byte number;
 
-	boolean isPointEstablished;
-
 	static {
 		utils = mockStatic(CrapsUtils.class);
 		utils.when(CrapsUtils::getPoint).thenReturn((byte) 0);
