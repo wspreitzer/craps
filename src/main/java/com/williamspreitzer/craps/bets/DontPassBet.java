@@ -1,10 +1,10 @@
 package com.williamspreitzer.craps.bets;
 
-public class PassLineBet extends NonPropositionBet {
+public class DontPassBet extends NonPropositionBet {
 
 	boolean isPointEstablished;
 	
-	public PassLineBet(int betAmount) {
+	public DontPassBet(int betAmount) {
 		super(betAmount);
 	}
 

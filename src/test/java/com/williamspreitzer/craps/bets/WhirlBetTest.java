@@ -15,22 +15,19 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class WhirlBetTest {
 
 	@Mock
-	Bet bet;
+	WhirlBet bet;
 
-	@Mock
-	PropositionOddsBet betMock;
-	
 	Bet whirlBet = null;
 
 	@BeforeEach
 	private void setup() {
-		when(betMock.getSingleUnit(anyInt(), anyByte())).thenReturn(1);
+		when(bet.getSingleUnit(anyInt(), anyByte())).thenReturn(1);
 		whirlBet = BetFactory.createPropsBet(BetType.WHIRL_BET, 5);
 	}
 
 	@Test
 	public void winWhirlBetWith2() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 2))
 				.thenReturn(this.processBet(whirlBet, (byte) 2, unit));
 		assertEquals(26, bet.processBet(whirlBet, (byte) 2));
@@ -38,7 +35,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void winWhirlBetWith3() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 3))
 				.thenReturn(this.processBet(whirlBet, (byte) 3, unit));
 		assertEquals(11, bet.processBet(whirlBet, (byte) 3));
@@ -46,7 +43,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void winWhirlBetWith7() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 7))
 				.thenReturn(this.processBet(whirlBet, (byte) 7, unit));
 		assertEquals(0, bet.processBet(whirlBet, (byte) 7));
@@ -54,7 +51,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void winWhirlBetWith11() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 11))
 				.thenReturn(this.processBet(whirlBet, (byte) 11, unit));
 		assertEquals(11, bet.processBet(whirlBet, (byte) 11));
@@ -62,7 +59,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void winWhirlBetWith12() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 12))
 				.thenReturn(this.processBet(whirlBet, (byte) 12, unit));
 		assertEquals(26, bet.processBet(whirlBet, (byte) 12));
@@ -70,7 +67,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith4() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 4))
 				.thenReturn(this.processBet(whirlBet, (byte) 4, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 4));
@@ -78,7 +75,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith5() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 5))
 				.thenReturn(this.processBet(whirlBet, (byte) 5, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 5));
@@ -86,7 +83,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith6() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 6))
 				.thenReturn(this.processBet(whirlBet, (byte) 6, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 6));
@@ -94,7 +91,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith8() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 8))
 				.thenReturn(this.processBet(whirlBet, (byte) 8, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 8));
@@ -102,7 +99,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith9() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 9))
 				.thenReturn(this.processBet(whirlBet, (byte) 9, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 9));
@@ -110,7 +107,7 @@ public class WhirlBetTest {
 
 	@Test
 	public void loseWhirlBetWith10() {
-		int unit = betMock.getSingleUnit(5, (byte) 5);
+		int unit = bet.getSingleUnit(5, (byte) 5);
 		when(bet.processBet(whirlBet, (byte) 10))
 				.thenReturn(this.processBet(whirlBet, (byte) 10, unit));
 		assertEquals(-5, bet.processBet(whirlBet, (byte) 10));

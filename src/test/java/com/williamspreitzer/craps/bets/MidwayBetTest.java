@@ -13,7 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class MidwayBetTest {
 
 	@Mock
-	Bet bet;
+	MidwayBet bet;
 	
 	Bet midwayBet = null;
 	

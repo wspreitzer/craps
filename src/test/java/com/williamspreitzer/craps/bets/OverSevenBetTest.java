@@ -13,7 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class OverSevenBetTest {
 	
 	@Mock
-	Bet bet;
+	OverSevenBet bet;
 	
 	Bet overSevenBet = null;
 	

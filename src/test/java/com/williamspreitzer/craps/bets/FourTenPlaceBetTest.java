@@ -14,10 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class FourTenPlaceBetTest {
 
 	@Mock
-	Bet bet;
-	
-	@Mock
-	FourTenPlaceBet buyBet;
+	FourTenPlaceBet bet;
 	
 	boolean isOn;
 	boolean isBuy;
@@ -26,10 +23,10 @@ public class FourTenPlaceBetTest {
 	
 	@BeforeEach
 	private void setup() { 
-		when(buyBet.isOn()).thenReturn(true);
-		when(buyBet.isBuy()).thenReturn(false);
-		this.isOn = buyBet.isOn();
-		this.isBuy = buyBet.isBuy();
+		when(bet.isOn()).thenReturn(true);
+		when(bet.isBuy()).thenReturn(false);
+		this.isOn = bet.isOn();
+		this.isBuy = bet.isBuy();
 		fourTenPlaceBet = BetFactory.createPropsBet(BetType.FOUR_TEN_PLACE_BET, (byte) 4, 5);
 	}
 	
@@ -57,8 +54,8 @@ public class FourTenPlaceBetTest {
 	
 	@Test
 	public void dontWinFourTenPlaceBetWith4AndOffBet() {
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(fourTenPlaceBet, (byte) 4))
 				.thenReturn(this.processBet(fourTenPlaceBet, (byte) 4, isOn, isBuy));
@@ -68,8 +65,8 @@ public class FourTenPlaceBetTest {
 	@Test 
 	public void dontWinFourTenPlaceBetWith10AndOffBet() {
 		fourTenPlaceBet = BetFactory.createPropsBet(BetType.FOUR_TEN_PLACE_BET, (byte) 10, 5);
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(fourTenPlaceBet, (byte) 10))
 				.thenReturn(this.processBet(fourTenPlaceBet, (byte) 10, isOn, isBuy));
@@ -86,8 +83,8 @@ public class FourTenPlaceBetTest {
 	
 	@Test
 	public void dontLoseFourTenPlaceBetWith7AndOffBet() {
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(fourTenPlaceBet, (byte) 7))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FOUR_TEN_PLACE_BET, (byte) 7, 5), (byte) 7, isOn, isBuy));
@@ -96,8 +93,8 @@ public class FourTenPlaceBetTest {
 	
 	@Test
 	public void winFourTenBuyBetWith4() {
-		when(buyBet.isBuy()).thenReturn(true);
-		this.isBuy = buyBet.isBuy();
+		when(bet.isBuy()).thenReturn(true);
+		this.isBuy = bet.isBuy();
 		when(bet
 				.processBet(fourTenPlaceBet, (byte) 4))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FOUR_TEN_PLACE_BET, (byte) 4, 5), (byte) 4, isOn, isBuy));
@@ -107,8 +104,8 @@ public class FourTenPlaceBetTest {
 	@Test
 	public void winFourTenBuyBetWith10() {
 		fourTenPlaceBet = BetFactory.createPropsBet(BetType.FOUR_TEN_PLACE_BET, (byte) 10, 5);
-		when(buyBet.isBuy()).thenReturn(true);
-		this.isBuy = buyBet.isBuy();
+		when(bet.isBuy()).thenReturn(true);
+		this.isBuy = bet.isBuy();
 		when(bet
 				.processBet(fourTenPlaceBet, (byte) 10))
 				.thenReturn(this.processBet(fourTenPlaceBet, (byte) 10, isOn, isBuy));

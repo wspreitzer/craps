@@ -14,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class FieldBetTest {
 
 	@Mock 
-	Bet bet;
+	FieldBet bet;
 	
 	Bet fieldBet = null;
 	

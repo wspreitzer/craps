@@ -14,8 +14,9 @@ import com.williamspreitzer.craps.roll.Roll;
 
 @ExtendWith(MockitoExtension.class)
 public class SixEightHardWayBetTest {
+	
 	@Mock
-	Bet bet;
+	SixEightHardwayBet bet;
 	
 	@Mock
 	Roll rollMock;
@@ -170,5 +171,4 @@ public class SixEightHardWayBetTest {
 		}
 		return (int) winnings;
 	}
-
 }

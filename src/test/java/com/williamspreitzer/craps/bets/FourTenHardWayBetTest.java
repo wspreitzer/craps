@@ -16,7 +16,7 @@ import com.williamspreitzer.craps.roll.Roll;
 public class FourTenHardWayBetTest {
 	
 	@Mock
-	Bet bet;
+	FourTenHardway bet;
 	
 	@Mock
 	Roll rollMock;

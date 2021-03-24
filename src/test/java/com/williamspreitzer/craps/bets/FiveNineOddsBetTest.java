@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +18,7 @@ import com.williamspreitzer.craps.utils.CrapsUtils;
 public class FiveNineOddsBetTest {
 
 	@Mock
-	Bet bet;
+	FiveNineOddsBet bet;
 	
 	Bet fiveNineOddsBet = null;	
 	
@@ -126,5 +127,10 @@ public class FiveNineOddsBetTest {
 			winnings = bet.getBetAmount() * -1;
 		}
 		return (int) winnings;
+	}
+	
+	@AfterAll
+	private static void close() {
+		utils.close();
 	}
 }

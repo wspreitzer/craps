@@ -14,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class AnyCrapsBetTest {
 	
 	@Mock
-	Bet bet;
+	AnyCrapsBet bet;
 	
 	Bet anyCrapsBet = null;
 	

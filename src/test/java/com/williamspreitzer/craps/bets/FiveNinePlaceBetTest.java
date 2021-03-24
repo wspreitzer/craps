@@ -12,11 +12,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class FiveNinePlaceBetTest {
-	@Mock
-	Bet bet;
 	
 	@Mock
-	FiveNinePlaceBet buyBet;
+	FiveNinePlaceBet bet;
 	
 	boolean isOn;
 	boolean isBuy;
@@ -26,10 +24,10 @@ public class FiveNinePlaceBetTest {
 	
 	@BeforeEach
 	private void setup() { 
-		when(buyBet.isOn()).thenReturn(true);
-		when(buyBet.isBuyBet()).thenReturn(false);
-		this.isOn = buyBet.isOn();
-		this.isBuy = buyBet.isBuyBet();
+		when(bet.isOn()).thenReturn(true);
+		when(bet.isBuyBet()).thenReturn(false);
+		this.isOn = bet.isOn();
+		this.isBuy = bet.isBuyBet();
 		fiveBet = BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 5, 5);
 		nineBet = BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 9, 5);
 	}
@@ -56,8 +54,8 @@ public class FiveNinePlaceBetTest {
 	
 	@Test
 	public void dontWinFiveNinePlaceBetWith5AndOffBet() {
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(fiveBet, (byte) 5))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 5, 5), (byte) 5, isOn, isBuy));
@@ -65,8 +63,8 @@ public class FiveNinePlaceBetTest {
 	}
 	
 	@Test void dontWinFiveNinePlaceBetWith9AndOffBet() {
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(nineBet, (byte) 9))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 9, 5), (byte) 9, isOn, isBuy));
@@ -83,8 +81,8 @@ public class FiveNinePlaceBetTest {
 	
 	@Test
 	public void dontLoseFiveNinePlaceBetWith7AndOffBet() {
-		when(buyBet.isOn()).thenReturn(false);
-		this.isOn = buyBet.isOn();
+		when(bet.isOn()).thenReturn(false);
+		this.isOn = bet.isOn();
 		when(bet
 				.processBet(fiveBet, (byte) 7))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 7, 5), (byte) 7, isOn, isBuy));
@@ -93,8 +91,8 @@ public class FiveNinePlaceBetTest {
 	
 	@Test
 	public void winFiveNineBuyBetWith5() {
-		when(buyBet.isBuyBet()).thenReturn(true);
-		this.isBuy = buyBet.isBuyBet();
+		when(bet.isBuyBet()).thenReturn(true);
+		this.isBuy = bet.isBuyBet();
 		when(bet
 				.processBet(fiveBet, (byte) 5))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 5, 10), (byte) 5, isOn, isBuy));
@@ -103,8 +101,8 @@ public class FiveNinePlaceBetTest {
 	
 	@Test
 	public void winFiveNineBuyBetWith9() {
-		when(buyBet.isBuyBet()).thenReturn(true);
-		this.isBuy = buyBet.isBuyBet();
+		when(bet.isBuyBet()).thenReturn(true);
+		this.isBuy = bet.isBuyBet();
 		when(bet
 				.processBet(nineBet, (byte) 9))
 				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.FIVE_NINE_PLACE_BET, (byte) 9, 10), (byte) 9, isOn, isBuy));

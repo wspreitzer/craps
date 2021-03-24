@@ -22,7 +22,7 @@ public class BetFactory {
 			bet = new DontComeBarTweleveBet(betAmount);
 			break;
 		case DONT_PASS_BAR_TWELEVE_BET:
-			bet = new DontPassBarTweleveBet(betAmount);
+			bet = new DontPassBet(betAmount);
 			break;
 		case DOUBLES_BET:
 			bet = new DoublesBet(betAmount);
@@ -100,8 +100,10 @@ public class BetFactory {
 			break;
 		case SIX_EIGHT_ODDS_BET:
 			bet = new SixEightOddsBet(number, betAmount);
+			break;
 		case SIX_EIGHT_PLACE_BET:
 			bet = new SixEightPlaceBet(number, betAmount);
+			break;
 		case THREE_OR_ELEVEN_BET:
 			bet = new ThreeOrElevenBet(number, betAmount);
 			break;

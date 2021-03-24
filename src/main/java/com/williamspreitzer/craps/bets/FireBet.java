@@ -1,20 +1,20 @@
 package com.williamspreitzer.craps.bets;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.williamspreitzer.craps.utils.CrapsUtils;
 
 public class FireBet extends PropositionOddsBet {
 
-	private List<Byte> pointsMade;
+	private Set<Byte> pointsMade;
 	
 	public FireBet(int betAmount) {
 		super(CrapsUtils.ZERO, betAmount);
-		pointsMade = new ArrayList<Byte>();
+		pointsMade = new HashSet<Byte>();
 	}
 
-	public List<Byte> getPointsMade() {
+	public Set<Byte> getPointsMade() {
 		return this.pointsMade;
 	}
 	
