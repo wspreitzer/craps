@@ -23,6 +23,8 @@ public class SixEightHardWayBetTest {
 	
 	Bet sixEightHardwayBet = null;
 	
+	boolean isHardway;
+	
 	@BeforeEach
 	private void setup() {
 		sixEightHardwayBet = BetFactory.createPropsBet(BetType.SIX_EIGHT_HARDWAY_BET, (byte) 6, 5);
@@ -37,10 +39,10 @@ public class SixEightHardWayBetTest {
 	public void winSixEightHardwayBetWithHard6Test() {
 		when(rollMock.
 				isHardway()).thenReturn(true);
-		boolean value = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 6))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 6, value));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 6));
 		assertEquals(45,bet.processBet(sixEightHardwayBet, (byte) 6));
 	}
 	
@@ -49,11 +51,11 @@ public class SixEightHardWayBetTest {
 		sixEightHardwayBet = BetFactory.createPropsBet(BetType.SIX_EIGHT_HARDWAY_BET, (byte) 8, 5);
 		when(rollMock
 				.isHardway()).thenReturn(true);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 8))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 8, isHardway));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 8));
 		assertEquals(45, bet.processBet(sixEightHardwayBet, (byte) 8));
 	}
 	
@@ -61,10 +63,10 @@ public class SixEightHardWayBetTest {
 	public void loseSixEightHardwayBetWithSoft6Test() {
 		when(rollMock
 				.isHardway()).thenReturn(false);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 6))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 6, isHardway));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 6));
 		assertEquals(-5, bet.processBet(sixEightHardwayBet, (byte) 6));
 	}
 	
@@ -73,10 +75,10 @@ public class SixEightHardWayBetTest {
 		sixEightHardwayBet = BetFactory.createPropsBet(BetType.SIX_EIGHT_HARDWAY_BET, (byte) 8, 5);
 		when(rollMock
 				.isHardway()).thenReturn(false);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 8))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 8, isHardway));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 8));
 		assertEquals(-5, bet.processBet(sixEightHardwayBet, (byte) 8));
 	}
 	
@@ -84,7 +86,7 @@ public class SixEightHardWayBetTest {
 	public void loseSixEightHArdwayBetWith7Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 7))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 7, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 7));
 		assertEquals(-5, bet.processBet(sixEightHardwayBet, (byte) 7));
 	}
 
@@ -92,7 +94,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith2Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 2))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 2, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 2));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 2));
 	}
 	
@@ -100,7 +102,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith3Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 3))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 3, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 3));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 3));
 	}
 	
@@ -108,7 +110,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith5Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 5))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 5, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 5));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 5));
 	}
 	
@@ -116,7 +118,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith4Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 4))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 4, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 4));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 4));
 	}
 	
@@ -124,7 +126,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith10Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 10))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 10, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 10));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 10));
 	}
 	
@@ -132,7 +134,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith9Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 9))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 9, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 9));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 9));
 	}
 	
@@ -141,7 +143,7 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith11Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 11))
-				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.SIX_EIGHT_HARDWAY_BET, (byte) 11, 5), (byte) 11, false));
+				.thenReturn(this.processBet(BetFactory.createPropsBet(BetType.SIX_EIGHT_HARDWAY_BET, (byte) 11, 5), (byte) 11));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 11));
 	}
 	
@@ -149,15 +151,15 @@ public class SixEightHardWayBetTest {
 	public void pushSixEightHardwayBetWith12Test() {
 		when(bet
 				.processBet(sixEightHardwayBet, (byte) 12))
-				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 12, false));
+				.thenReturn(this.processBet(sixEightHardwayBet, (byte) 12));
 		assertEquals(0, bet.processBet(sixEightHardwayBet, (byte) 12));
 	}
 	
-	private int processBet(Bet bet, byte count, boolean hardway) {
+	private int processBet(Bet bet, byte count) {
 		double winnings = 0;
 		switch(count) {
 		case 6: case 8:
-			if(hardway) {
+			if(isHardway) {
 				winnings = OddsBet.calculator.calculate(bet.getBetAmount(), (double) 9/1);
 			} else {
 				winnings = bet.getBetAmount() * -1;

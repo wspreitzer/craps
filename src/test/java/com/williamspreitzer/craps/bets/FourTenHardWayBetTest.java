@@ -23,6 +23,8 @@ public class FourTenHardWayBetTest {
 	
 	Bet fourTenHardwayBet;
 	
+	boolean isHardway;
+	
 	@Test
 	public void mockNotNullsTest() {
 		assertNotNull(bet);
@@ -38,10 +40,10 @@ public class FourTenHardWayBetTest {
 	public void winFourTenHardwayBetWithHard4Test() {
 		when(rollMock.
 				isHardway()).thenReturn(true);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 4))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 4, isHardway));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 4));
 		assertEquals(35,bet.processBet(fourTenHardwayBet, (byte) 4));
 	}
 	
@@ -50,11 +52,11 @@ public class FourTenHardWayBetTest {
 		fourTenHardwayBet = BetFactory.createPropsBet(BetType.FOUR_TEN_HARDWAY_BET, (byte) 10, 5);
 		when(rollMock
 				.isHardway()).thenReturn(true);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 10))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 10, isHardway));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 10));
 		assertEquals(35, bet.processBet(fourTenHardwayBet, (byte) 10));
 	}
 	
@@ -62,10 +64,10 @@ public class FourTenHardWayBetTest {
 	public void loseFourTenHardwayBetWithSoft4Test() {
 		when(rollMock
 				.isHardway()).thenReturn(false);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 4))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 4, isHardway));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 4));
 		assertEquals(-5, bet.processBet(fourTenHardwayBet, (byte) 4));
 	}
 	
@@ -74,10 +76,10 @@ public class FourTenHardWayBetTest {
 		fourTenHardwayBet = BetFactory.createPropsBet(BetType.FOUR_TEN_HARDWAY_BET, (byte) 10, 5);
 		when(rollMock
 				.isHardway()).thenReturn(false);
-		boolean isHardway = rollMock.isHardway();
+		isHardway = rollMock.isHardway();
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 10))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 10, isHardway));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 10));
 		assertEquals(-5, bet.processBet(fourTenHardwayBet, (byte) 10));
 	}
 	
@@ -85,7 +87,7 @@ public class FourTenHardWayBetTest {
 	public void loseFourTenHArdwayBetWith7Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 7))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 7, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 7));
 		assertEquals(-5, bet.processBet(fourTenHardwayBet, (byte) 7));
 	}
 
@@ -93,7 +95,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith2Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 2))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 2, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 2));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 2));
 	}
 	
@@ -101,7 +103,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith3Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 3))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 3, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 3));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 3));
 	}
 	
@@ -109,7 +111,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith5Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 5))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 5, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 5));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 5));
 	}
 	
@@ -117,7 +119,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith6Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 6))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 6, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 6));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 6));
 	}
 	
@@ -125,7 +127,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith8Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 8))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 8, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 8));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 8));
 	}
 	
@@ -133,7 +135,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith9Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 9))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 9, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 9));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 9));
 	}
 	
@@ -142,7 +144,7 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith11Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 11))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 11, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 11));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 11));
 	}
 	
@@ -150,15 +152,15 @@ public class FourTenHardWayBetTest {
 	public void pushFourTenHardwayBetWith12Test() {
 		when(bet
 				.processBet(fourTenHardwayBet, (byte) 12))
-				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 12, false));
+				.thenReturn(this.processBet(fourTenHardwayBet, (byte) 12));
 		assertEquals(0, bet.processBet(fourTenHardwayBet, (byte) 12));
 	}
 	
-	private int processBet(Bet bet, byte count, boolean hardway) {
+	private int processBet(Bet bet, byte count) {
 		double winnings = 0;
 		switch(count) {
 		case 4: case 10:
-			if(hardway) {
+			if(isHardway) {
 				winnings = OddsBet.calculator.calculate(bet.getBetAmount(), (double) 7/1);
 			} else {
 				winnings = bet.getBetAmount() * -1;
