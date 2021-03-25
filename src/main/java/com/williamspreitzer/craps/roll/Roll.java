@@ -4,8 +4,8 @@ import java.util.Random;
 
 import com.williamspreitzer.craps.utils.Die;
 
-public abstract class Roll {
-	boolean isPointEstablished;
+public class Roll {
+	
 	Die roll;
 	int die;
 	int die2;
@@ -17,7 +17,6 @@ public abstract class Roll {
 		roll = () -> {
 			return rand.nextInt(6) + 1;
 		};
-		
 		die =  roll.getRoll();
 		die2 = roll.getRoll();
 		count = (byte) ( die + die2);
@@ -38,6 +37,4 @@ public abstract class Roll {
 	public boolean isHardway() {
 		return die == die2 ? true : false;
 	}
-	
-	public abstract boolean isPointEstablished();
 }
