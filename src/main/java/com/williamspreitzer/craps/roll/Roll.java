@@ -2,11 +2,10 @@ package com.williamspreitzer.craps.roll;
 
 import java.util.Random;
 
-import com.williamspreitzer.craps.utils.CrapsUtils;
 import com.williamspreitzer.craps.utils.Die;
 
-public abstract class Roll {
-	boolean isPointEstablished;
+public class Roll {
+	
 	Die roll;
 	int die;
 	int die2;
@@ -18,11 +17,9 @@ public abstract class Roll {
 		roll = () -> {
 			return rand.nextInt(6) + 1;
 		};
-		
 		die =  roll.getRoll();
 		die2 = roll.getRoll();
 		count = (byte) ( die + die2);
-		CrapsUtils.getDiceTracker().put(getRollCount(), new Dice((byte)this.die, (byte)this.die2));
 	}
 
 	public byte getCount() {
@@ -33,13 +30,11 @@ public abstract class Roll {
 		this.count = count;
 	}
 	
-	private static int getRollCount() {
+	public static int getRollCount() {
 		return rollCount++;
 	}
 	
 	public boolean isHardway() {
 		return die == die2 ? true : false;
 	}
-	
-	public abstract boolean isPointEstablished();
 }
