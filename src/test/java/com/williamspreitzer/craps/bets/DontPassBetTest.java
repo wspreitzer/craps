@@ -14,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.williamspreitzer.craps.roll.Roll;
 import com.williamspreitzer.craps.utils.CrapsUtils;
 
 @ExtendWith(MockitoExtension.class)
@@ -22,9 +21,6 @@ public class DontPassBetTest {
 
 	@Mock
 	DontPassBet bet;
-	
-	@Mock
-	Roll roll;
 	
 	Bet dontPassLineBet = null;
 	
@@ -47,8 +43,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void loseDontPassLineBetWith7OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		 this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		 this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 7));
@@ -57,8 +53,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void loseDontPassLineBetWith11OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 11))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 11));
@@ -67,8 +63,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void winDontPassLineBetWith2OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 2))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 2));
@@ -77,8 +73,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void winDontPassLineBetWith3OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 3))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 3));
@@ -87,8 +83,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void winDontPassLineBetWith12OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 12))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 12));
@@ -97,8 +93,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith4OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 4))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 4));
@@ -109,8 +105,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith5OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 5))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 5));
@@ -121,8 +117,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith6OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 6))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 6));
@@ -133,8 +129,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith8OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 8))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 8));
@@ -145,8 +141,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith9OnComeout() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 9))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 9));
@@ -157,8 +153,8 @@ public class DontPassBetTest {
 	
 	@Test
 	public void setPointWith10OnComeOut() {
-		when(roll.isPointEstablished()).thenReturn(false);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(false);
+		this.isPointEstablished = bet.isPointEstablished();
 		when(bet
 				.processBet(dontPassLineBet, (byte) 10))
 				.thenReturn(this.processBet(dontPassLineBet, (byte) 10));
@@ -173,8 +169,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 4, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -189,8 +185,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 5, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -205,8 +201,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 6, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -221,8 +217,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 8, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -237,8 +233,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 9, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -253,8 +249,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 10, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 7))
@@ -269,8 +265,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 4, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 4))
@@ -285,8 +281,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 5, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 5))
@@ -301,8 +297,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 6, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 6))
@@ -317,8 +313,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 8, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 8))
@@ -333,8 +329,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 9, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 9))
@@ -349,8 +345,8 @@ public class DontPassBetTest {
 		assertEquals((byte) 10, CrapsUtils.getPoint());
 		point = CrapsUtils.getPoint();
 		
-		when(roll.isPointEstablished()).thenReturn(true);
-		this.isPointEstablished = roll.isPointEstablished();
+		when(bet.isPointEstablished()).thenReturn(true);
+		this.isPointEstablished = bet.isPointEstablished();
 		assertTrue(this.isPointEstablished);
 		when(bet
 				.processBet(dontPassLineBet, (byte) 10))
